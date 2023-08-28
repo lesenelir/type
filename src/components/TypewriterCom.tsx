@@ -19,13 +19,15 @@ function TypewriterCom() {
         }}
       />
 
-      <Typewriter
-        options={{
-          strings: ['Hello World', 'Some other string'],
-          autoStart: true,
-          loop: true,
-        }}
-      />
+      <p className={'text-red-400'}>
+        <Typewriter
+          options={{
+            strings: ['Hello World', 'Some other string'],
+            autoStart: true,
+            loop: true,
+          }}
+        />
+      </p>
     </>
   )
 }
