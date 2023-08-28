@@ -19,7 +19,7 @@ function TypewriterCom() {
         }}
       />
 
-      <p className={'text-red-400'}>
+      <div className={'text-red-400'}>
         <Typewriter
           options={{
             strings: ['Hello World', 'Some other string'],
@@ -27,7 +27,7 @@ function TypewriterCom() {
             loop: true,
           }}
         />
-      </p>
+      </div>
     </>
   )
 }
