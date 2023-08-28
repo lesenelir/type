@@ -1,6 +1,7 @@
 import TypewriterCom from "@/components/TypewriterCom.tsx"
 import ReactTypeAnimation from "@/components/ReactTypeAnimation.tsx"
 import OwnTypeAnimation from "@/components/OwnTypeAnimation.tsx"
+import RequestAnimationType from "@/components/RequestAnimationType.tsx"
 
 function App() {
 
@@ -17,9 +18,15 @@ function App() {
       </div>
 
       <div className={'m-2 p-2 bg-blue-300'}>
-        <p>Own Type Animation:</p>
+        <p>Own type setTimeout:</p>
         <OwnTypeAnimation/>
       </div>
+
+      <div className={'m-2 p-2 bg-blue-400'}>
+        <p>Own type requestAnimationFrame:</p>
+        <RequestAnimationType/>
+      </div>
+
     </>
   )
 }
