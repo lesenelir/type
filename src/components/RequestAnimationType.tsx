@@ -6,7 +6,7 @@ function RequestAnimationType() {
       <TypeAnimationFrame
         text={'hello world'}
         className={'text-yellow-800'}
-        delay={100}
+        delay={120}
         repeat={true}
       />
     </>

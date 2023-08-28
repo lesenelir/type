@@ -7,7 +7,7 @@ function OwnTypeAnimation() {
       <Typewriter
         className={'text-yellow-600'}
         text={'hello world'}
-        delay={100}
+        delay={120}
         repeat={true}
       />
     </>
