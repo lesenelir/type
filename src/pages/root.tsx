@@ -1,9 +1,11 @@
+import {Link} from "react-router-dom"
+
 import TypewriterCom from "@/components/TypewriterCom.tsx"
 import ReactTypeAnimation from "@/components/ReactTypeAnimation.tsx"
 import OwnTypeAnimation from "@/components/OwnTypeAnimation.tsx"
 import RequestAnimationType from "@/components/RequestAnimationType.tsx"
 
-function App() {
+function RootPage() {
 
   return (
     <>
@@ -27,8 +29,19 @@ function App() {
         <RequestAnimationType/>
       </div>
 
+      <div className={'m-2 p-2'}>
+        <p>OpenAI Typewriter Website 👋</p>
+        <button className={`
+          bg-blue-200 p-2 rounded-lg hover:bg-blue-300  
+          transition duration-700 ease-in-out
+        `}>
+          <Link to={'/openai'}>
+            Enter
+          </Link>
+        </button>
+      </div>
     </>
   )
 }
 
-export default App
+export default RootPage
