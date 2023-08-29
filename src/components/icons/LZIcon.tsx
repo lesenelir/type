@@ -1,7 +1,7 @@
 interface IProps {
   width: number
   height: number
-  className: string
+  className?: string
 }
 
 function LZIcon(props: IProps) {
