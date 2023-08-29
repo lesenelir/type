@@ -1,5 +1,7 @@
+import {useEffect, useRef, useState} from "react"
 import Typewriter, {TypewriterClass} from 'typewriter-effect'
 
+import {textList} from "@/source/main.ts"
 import {INavbarLeft, INavbarRight} from "@/types/data.ts"
 import {navbarLeftData, navbarRightData} from "@/source/navbar.ts"
 import LZIcon from "@/components/icons/LZIcon.tsx"
@@ -9,6 +11,30 @@ import ArrowUpRightIcon from "@/components/icons/ArrowUpRightIcon.tsx"
 import '@/style/openai.css'
 
 function OpenAIPage() {
+  const [textIndex, setTextIndex] = useState<number>(0)
+  // save typewriter instance
+  const typewriterRef = useRef<TypewriterClass | null>(null)
+
+  // when textIndex changed, start typewriter
+  useEffect(() => {
+    if (typewriterRef.current) {
+      const cursorElement = document.querySelector('.Typewriter__cursor--main')
+      if (cursorElement) {
+        (cursorElement as HTMLElement).style.opacity = '1'
+      }
+
+      typewriterRef.current
+        .typeString(`<span class='mr-0.5 text-4xl'>${textList[textIndex]}</span>`)
+        .pauseFor(1500)
+        .deleteAll()
+        .pauseFor(1500)
+        .callFunction(() => {
+          setTextIndex((prevState: number) => (prevState + 1) % textList.length)
+        })
+        .start()
+    }
+  }, [textIndex])
+
   return (
     <div className={'w-screen h-screen flex flex-col'}>
       {/* Navbar */}
@@ -38,13 +64,28 @@ function OpenAIPage() {
       <main className={'flex-1 flex flex-col justify-center items-center p-5'}>
         <Typewriter
           options={{
-            delay: 10,
+            delay: 50,
             cursor: '',
+            cursorClassName: 'Typewriter__cursor--main'
           }}
           onInit={(typewriter: TypewriterClass) => {
+            typewriterRef.current = typewriter
             typewriter
-              .pauseFor(3000)
-              .typeString('hello world')
+              .pauseFor(2500)
+              .callFunction(() => {
+                const cursorElement = document.querySelector('.Typewriter__cursor--main')
+                if (cursorElement) {
+                  (cursorElement as HTMLElement).style.opacity = '1'
+                }
+              })
+              .pauseFor(1000)
+              .typeString(`<span class='mr-0.5 text-4xl'>${textList[textIndex]}</span>`)
+              .pauseFor(1500)
+              .deleteAll()
+              .pauseFor(1500)
+              .callFunction(() => {
+                setTextIndex((prevState: number) => (prevState + 1) % textList.length)
+              })
               .start()
           }}
         />
@@ -60,7 +101,7 @@ function OpenAIPage() {
           }}
           onInit={(typewriter: TypewriterClass) => {
             typewriter
-              .typeString(`<span class="text-lg">Lesenelir AI Base: </span>`)
+              .typeString(`<span class='text-lg'>Lesenelir AI Base: </span>`)
               .typeString(`<span>A collection of art and code works about AI, inspired by OpenAI.</span>`)
               .typeString('<br/>')
               .typeString(`<span>This project includes: ChatGPT and DALL-E.</span>`)
