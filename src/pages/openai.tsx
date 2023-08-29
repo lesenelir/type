@@ -1,5 +1,5 @@
 import {INavbarLeft, INavbarRight} from "@/types/data.ts"
-import {navbarLeftData, navbarRightData} from "@/source/data.tsx"
+import {navbarLeftData, navbarRightData} from "@/source/navbar.tsx"
 
 import LZIcon from "@/components/icons/LZIcon.tsx"
 import NavbarLi from "@/components/openai/NavbarLi.tsx"
