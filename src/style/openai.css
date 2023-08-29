@@ -1,0 +1,13 @@
+.Typewriter__cursor--hidden {
+  display: none;
+}
+
+.Typewriter__cursor--circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: none;
+}
+
