@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom"
 
-import TypewriterCom from "@/components/TypewriterCom.tsx"
-import ReactTypeAnimation from "@/components/ReactTypeAnimation.tsx"
-import OwnTypeAnimation from "@/components/OwnTypeAnimation.tsx"
-import RequestAnimationType from "@/components/RequestAnimationType.tsx"
+import TypewriterCom from "@/components/typewriters/TypewriterCom.tsx"
+import ReactTypeAnimation from "@/components/typewriters/ReactTypeAnimation.tsx"
+import OwnTypeAnimation from "@/components/typewriters/OwnTypeAnimation.tsx"
+import RequestAnimationType from "@/components/typewriters/RequestAnimationType.tsx"
 
 function RootPage() {
 
