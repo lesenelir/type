@@ -13,7 +13,7 @@ function NavbarLi(props: IProps) {
   if (text === 'Get Started') {
     return (
       <li className={`flex flex-row items-center p-2 border 
-        cursor-pointer transition duration-500 ease-in
+        cursor-pointer transition duration-400 ease-in
         hover:bg-black hover:text-white`
       }>
         {text}
