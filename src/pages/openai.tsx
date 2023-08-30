@@ -64,13 +64,12 @@ function OpenAIPage() {
           ))}
         </ul>
 
-        {/* pc icon */}
+        {/* mobile icon */}
         <ul className={'xl:hidden max-xl:flex ml-auto'}>
           <li className={'flex flex-row items-center cursor-pointer underline-offset-4 hover:underline'}>
             Menu
           </li>
         </ul>
-
       </nav>
 
       {/* Content */}
