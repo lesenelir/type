@@ -51,18 +51,26 @@ function OpenAIPage() {
         </div>
 
         {/* chevron down lists */}
-        <ul className={'flex flex-row ml-40 gap-4'}>
+        <ul className={'xl:flex flex-row max-xl:hidden ml-40 gap-4'}>
           {navbarLeftData.map((item: INavbarLeft) => (
             <NavbarLi key={item.text} text={item.text} chevron={item.chevron}/>
           ))}
         </ul>
 
         {/* arrow up right icons */}
-        <ul className={'flex flex-row gap-4 ml-auto'}>
+        <ul className={'xl:flex flex-row max-xl:hidden gap-4 ml-auto'}>
           {navbarRightData.map((item: INavbarRight) => (
             <NavbarLi key={item.text} text={item.text} arrow={item.arrow}/>
           ))}
         </ul>
+
+        {/* pc icon */}
+        <ul className={'xl:hidden max-xl:flex ml-auto'}>
+          <li className={'flex flex-row items-center cursor-pointer underline-offset-4 hover:underline'}>
+            Menu
+          </li>
+        </ul>
+
       </nav>
 
       {/* Content */}

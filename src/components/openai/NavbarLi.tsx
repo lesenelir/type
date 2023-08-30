@@ -12,7 +12,7 @@ function NavbarLi(props: IProps) {
 
   if (text === 'Get Started') {
     return (
-      <li className={`flex flex-row items-center p-2 border 
+      <li className={`flex flex-row items-center p-2 border underline-offset-4
         cursor-pointer transition duration-400 ease-in
         hover:bg-black hover:text-white`
       }>
@@ -23,7 +23,7 @@ function NavbarLi(props: IProps) {
   }
 
   return (
-    <li className={'flex flex-row items-center cursor-pointer hover:underline'}>
+    <li className={'flex flex-row items-center cursor-pointer underline-offset-4 hover:underline'}>
       {text}
       {chevron && <ChevronDownIcon width={20} height={20}/>}
       {arrow && <ArrowUpRightIcon width={20} height={20}/>}
