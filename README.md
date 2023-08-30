@@ -22,7 +22,7 @@ To see the animation effect from OpenAI's official website, go to [OpenAI ChatGP
 
 I've rebuilt the website using React, incorporating the `typewriter-effect` and `tailwindcss` libraries. 
 
-You can check out the demo by visiting the URL in the top right corner of the repo.
+You can check out the [demo](https://type-rose.vercel.app/openai) by visiting the URL in the top right corner of the repo.
 
 ### License
 
