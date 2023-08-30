@@ -31,7 +31,7 @@ function OpenAIPage() {
           // Before delete start, change colorIndex
           setColorIndex((prevState: number) => (prevState + 1) % textList.length)
         })
-        .deleteAll()
+        .deleteAll(20)
         .pauseFor(1500)
         .callFunction(() => {
           setTextIndex((prevState: number) => (prevState + 1) % textList.length)
@@ -78,7 +78,6 @@ function OpenAIPage() {
         <Typewriter
           options={{
             delay: 40,
-            deleteSpeed: 10,
             cursor: '',
             cursorClassName: 'Typewriter__cursor--main'
           }}
@@ -99,7 +98,7 @@ function OpenAIPage() {
                 // Before delete start, change colorIndex
                 setColorIndex((prevState: number) => (prevState + 1) % textList.length)
               })
-              .deleteAll()
+              .deleteAll(20)
               .pauseFor(1500)
               .callFunction(() => {
                 setTextIndex((prevState: number) => (prevState + 1) % textList.length)
