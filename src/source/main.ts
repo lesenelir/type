@@ -6,5 +6,4 @@ export const textList: string[] = [
   "Let's explore",
   "Let's innovate",
   "Let's chit-chat",
-  "Let's brainstorm",
 ]
