@@ -12,6 +12,7 @@ import '@/style/openai.css'
 
 function OpenAIPage() {
   const [textIndex, setTextIndex] = useState<number>(0)
+  const [colorIndex, setColorIndex] = useState<number>(0)
   // save typewriter instance
   const typewriterRef = useRef<TypewriterClass | null>(null)
 
@@ -26,6 +27,10 @@ function OpenAIPage() {
       typewriterRef.current
         .typeString(`<span class='mr-0.5 text-4xl'>${textList[textIndex]}</span>`)
         .pauseFor(1500)
+        .callFunction(() => {
+          // Before delete start, change colorIndex
+          setColorIndex((prevState: number) => (prevState + 1) % textList.length)
+        })
         .deleteAll()
         .pauseFor(1500)
         .callFunction(() => {
@@ -36,7 +41,7 @@ function OpenAIPage() {
   }, [textIndex])
 
   return (
-    <div className={'w-screen h-screen flex flex-col'}>
+    <div className={`w-screen h-screen flex flex-col bg-openai-b-${colorIndex} text-openai-t-${colorIndex}`}>
       {/* Navbar */}
       <nav className={'h-22 p-5 flex flex-row'}>
         {/* Navbar Icon and main text */}
@@ -64,7 +69,8 @@ function OpenAIPage() {
       <main className={'flex-1 flex flex-col justify-center items-center p-5'}>
         <Typewriter
           options={{
-            delay: 50,
+            delay: 40,
+            deleteSpeed: 10,
             cursor: '',
             cursorClassName: 'Typewriter__cursor--main'
           }}
@@ -81,6 +87,10 @@ function OpenAIPage() {
               .pauseFor(1000)
               .typeString(`<span class='mr-0.5 text-4xl'>${textList[textIndex]}</span>`)
               .pauseFor(1500)
+              .callFunction(() => {
+                // Before delete start, change colorIndex
+                setColorIndex((prevState: number) => (prevState + 1) % textList.length)
+              })
               .deleteAll()
               .pauseFor(1500)
               .callFunction(() => {
