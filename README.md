@@ -4,19 +4,19 @@ Creating a typing animation in React using different libraries and custom approa
 
 Successfully replicated the animation effect from OpenAI's official website.
 
-### Typewriter Libraries
+## Typewriter Libraries
 
 - [react-typing-animation](https://www.npmjs.com/package/react-type-animation)
 
 - [typewriter-effect](https://www.npmjs.com/package/typewriter-effect)
 
-### Custom Approach
+## Custom Approach
 
 - setTimeout
 
 - requestAnimationFrame
 
-### OpenAI Demo
+## OpenAI Demo
 
 To see the animation effect from OpenAI's official website, go to [OpenAI ChatGPT](https://openai.com/chatgpt).
 
@@ -24,7 +24,7 @@ I've rebuilt the website using React, incorporating the `typewriter-effect` and 
 
 You can check out the [demo](https://type-rose.vercel.app/openai) by visiting the URL in the top right corner of the repo.
 
-### License
+## License
 
 MIT License
 
